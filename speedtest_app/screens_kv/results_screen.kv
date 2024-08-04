@@ -1,0 +1,35 @@
+<ResultsScreen>:
+    name: "results_screen"
+    MDBoxLayout:
+        orientation: "vertical"
+        
+        MDTopAppBar:
+            title: "Test Results"
+            left_action_items: [["arrow-left", lambda x: app.change_screen("home_screen")]]
+            elevation: 2
+
+        MDBoxLayout:
+            orientation: "vertical"
+            padding: "16dp"
+            spacing: "16dp"
+
+            MDScrollView:
+                MDList:
+                    id: results_list
+
+            MDBoxLayout:
+                orientation: "horizontal"
+                spacing: "16dp"
+                adaptive_height: True
+
+                MDRaisedButton:
+                    text: "Save Results"
+                    on_release: app.save_results()
+
+                MDRaisedButton:
+                    text: "Share Results"
+                    on_release: app.share_results()
+
+        Widget:
+            size_hint_y: None
+            height: "16dp"

@@ -1,0 +1,53 @@
+<AboutScreen>:
+    name: "about_screen"
+    MDBoxLayout:
+        orientation: "vertical"
+        
+        MDTopAppBar:
+            title: "About"
+            left_action_items: [["arrow-left", lambda x: app.change_screen("home_screen")]]
+            elevation: 2
+
+        MDScrollView:
+            MDBoxLayout:
+                orientation: "vertical"
+                size_hint_y: None
+                height: self.minimum_height
+                padding: "16dp"
+                spacing: "16dp"
+
+                MDLabel:
+                    text: "SpeedTest App"
+                    font_style: "H4"
+                    halign: "center"
+                    adaptive_height: True
+
+                MDLabel:
+                    text: "Version 1.0"
+                    theme_text_color: "Secondary"
+                    font_style: "Subtitle1"
+                    halign: "center"
+                    adaptive_height: True
+
+                MDLabel:
+                    text: "This app is designed to test the speed of multiple IPs and websites by using the ping command. It provides real-time results and allows users to save and share their speed test results."
+                    theme_text_color: "Secondary"
+                    font_style: "Body1"
+                    halign: "center"
+                    adaptive_height: True
+
+                MDLabel:
+                    text: "Developed by Mike"
+                    theme_text_color: "Secondary"
+                    font_style: "Caption"
+                    halign: "center"
+                    adaptive_height: True
+
+                Widget:
+                    size_hint_y: None
+                    height: "24dp"
+
+                MDRaisedButton:
+                    text: "Visit Website"
+                    on_release: app.open_website("https://www.example.com")
+                    pos_hint: {"center_x": .5}

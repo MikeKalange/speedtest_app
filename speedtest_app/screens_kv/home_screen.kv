@@ -1,0 +1,58 @@
+<HomeScreen>
+    name: "home_screen"
+    MDBoxLayout:
+        orientation: "vertical"
+
+        MDTopAppBar:
+            title: "SpeedTest App"
+            right_action_items: [["cog", lambda x: app.open_settings_screen()]]
+            elevation: 2
+
+
+        MDBoxLayout:
+            orientation: "vertical"
+            padding: "16dp"
+            spacing: "16dp"
+
+            MDTextField:
+                id: ip_input
+                hint_text: "Enter IP or Website"
+                helper_text: "Press Enter or tap Add to insert"
+                helper_text_mode: "on_focus"
+                icon_right: "web"
+                on_text_validate: app.add_ip(self.text)
+
+            MDRaisedButton:
+                text: "Add IP"
+                on_release: app.add_ip(ip_input.text)
+
+            MDScrollView:
+                MDList:
+                    id: ip_list
+
+            MDRaisedButton:
+                text: "Start Test"
+                on_release: app.start_speed_test()
+
+        MDBottomNavigation:
+            panel_color: app.theme_cls.primary_color
+            selected_color_background: app.theme_cls.primary_light
+            text_color_active: app.theme_cls.primary_dark
+
+            MDBottomNavigationItem:
+                name: "home"
+                text: "home"
+                icon: "home"
+                on_tab_press: app.change_screen("home_screen")
+
+            MDBottomNavigationItem:
+                name: "results"
+                text: "Results"
+                icon: "file-document"
+                on_tab_press: app.change_screen("results_screen")
+                
+            MDBottomNavigationItem:
+                name: "about"
+                text: "About"
+                icon: "information"
+                on_tab_press: app.change_screen("about_screen")

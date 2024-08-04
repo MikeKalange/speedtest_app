@@ -1,0 +1,22 @@
+{
+    "servers": [
+      {
+        "id": 1,
+        "host": "192.0.2.1",
+        "country": "US",
+        "city": "New York",
+        "sponsor": "Example Sponsor",
+        "lat": 40.7128,
+        "lon": -74.0060,
+        "distance": 1234.56
+      },
+      {
+        "id": 2,
+        "host": "165.57.80.174"
+      },
+      {
+        
+      }
+    ]
+  }
+  
